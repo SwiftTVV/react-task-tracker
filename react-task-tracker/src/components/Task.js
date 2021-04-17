@@ -1,7 +1,10 @@
-const Task = () => {
+import { FaTimes } from 'react-icons/fa'
+
+const Task = ({ task, onDelete }) => {
     return (
-        <div>
-            //https://youtu.be/w7ejDZ8SWv8?t=2837
+        <div className='task'>
+            <h3>{task.text} <FaTimes style={{ color: 'red', cursor: 'pointer' }} onClick={() => onDelete(task.id)}/></h3>
+            <p>{task.day}</p>
         </div>
     )
 }
